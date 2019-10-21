@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>jsradio</title>
+
+		<script src="library/moment/moment.min.js"></script>
+		<script src="library/howler/howler.min.js"></script>
+		<script src="jsradio.js"></script>
+
+		<script>
+			function startRadio() {
+				document.getElementById("div1").style.display = 'none';
+
+				document.getElementById("div2").style.display = 'block';
+				document.getElementById("div3").style.display = 'block';
+				document.getElementById("div4").style.display = 'block';
+				document.getElementById("div5").style.display = 'block';
+
+				var radio = new jsradio('audio/gtalossantos.mp3');
+				radio.start();
+			}
+		</script>
+
+		<style>
+			body {
+				font-family: Courier New, Courier, Lucida Sans Typewriter, Lucida Typewriter , monospace;
+			}
+
+			.div1 {
+				position: fixed;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				width: 400px;
+				height: 100px;
+				text-align: center;
+				color: black;
+			}
+
+			.div2 {
+				display: none;
+			}
+
+			.div3 {
+				display: none;
+			}
+
+			.div4 {
+				display: none;
+				position: absolute;
+				bottom: 0;
+			}
+
+			.div5 {
+				display: none;
+				position: absolute;
+				right: 0;
+				bottom: 0;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="div1" id="div1">
+			<p id="text">howdy and welcome to my radio website. to start listening click the button below.</p><br><br>
+			<a href="#" onclick="startRadio()">[start listening]</a>
+		</div>
+
+		<div class="div2" id="div2">
+			<p>jsradio - demo</p>
+		</div>
+
+		<div class="div3" id="div3">
+			<p id="text2"></p>
+		</div>
+
+		<div class="div4" id="div4">
+			<p>please be paitent when starting jsradio, it could take a minute or two to load.</p>
+		</div>
+
+		<div class="div5" id="div5">
+			<a href="https://github.com/nathanaccidentally/jsradio">github</a>
+			<a href="#" onclick="Howler.unload()">unload cache</a>
+		</div>
+	</body>
+</html>
